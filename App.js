@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Colors, DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+
+
+
+
+const theme = {
+    ...DefaultTheme,
+    colors: {
+        ...DefaultTheme.colors,
+        primary: '#013531',
+        accent: '#1261C7',
+        text:'black'
+    },
+};
+
+
+
 
 export default function App() {
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <PaperProvider theme={theme}>
+          <Login/>
+      </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+
